@@ -1,0 +1,118 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d641e50, pid=10476, tid=14076
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_01-b08 mixed mode)
+# Problematic frame:
+# V  [jvm.dll+0x1e50]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00a212b8):  VMThread [id=14076]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000179
+
+Registers:
+EAX=0x00000149, EBX=0x009edb58, ECX=0x06bc7150, EDX=0x00000149
+ESP=0x0aaaf668, EBP=0x0aaaf6b8, ESI=0x06bc7150, EDI=0x06bc7150
+EIP=0x6d641e50, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0aaaf668)
+0x0aaaf668:   06bc7150 6d72ca48 00000149 6d64bf5a
+0x0aaaf678:   06bc7150 0aaaf6c8 0aaaf6c8 009e77c0
+0x0aaaf688:   6d693f0c 06bc723f 6d6b0c4e 06bc723f
+0x0aaaf698:   009ed940 6d6b12a6 009edb20 6d693b62
+0x0aaaf6a8:   0aaaf6c8 00000000 00000002 009e7770
+0x0aaaf6b8:   0aaaf6d4 6d6b0c27 0aaaf6c8 00000000
+0x0aaaf6c8:   6d762b9c 06bc723f 00000000 06bc723f
+0x0aaaf6d8:   6d6ad065 06bc723f 0aaaf7f8 00000000 
+
+Instructions: (pc=0x6d641e50)
+0x6d641e40:   e8 ea f8 ff ff 5f 5e c9 c3 8b 54 24 04 56 8b f1
+0x6d641e50:   8b 42 30 85 c0 7f 25 7d 1b 83 c9 ff 2b c8 8b 46 
+
+
+Stack: [0x0aa70000,0x0aab0000),  sp=0x0aaaf668,  free space=253k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1e50]
+V  [jvm.dll+0x70c27]
+
+VM_Operation (0x0006f158): generation collection for allocation, mode: safepoint, requested by thread 0x00355f58
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00a3d9a8 JavaThread "" [_thread_blocked, id=4900]
+  0x00a3bfd8 JavaThread "
+[error occurred during error reporting, step 170, id 0xc0000005]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x003555a0/0x00001f20] Threads_lock - owner thread: 0x00a212b8
+[0x00355720/0x00001ee4] Heap_lock - owner thread: 0x00355f58
+
+Heap
+ def new generation   total 576K, used 64K [0x02a70000, 0x02b10000, 0x02f50000)
+  eden space 512K,   0% used [0x02a70000, 0x02a70000, 0x02af0000)
+  from space 64K, 100% used [0x02af0000, 0x02b00000, 0x02b00000)
+  to   space 64K,   0% used [0x02b00000, 0x02b00000, 0x02b10000)
+ tenured generation   total 1536K, used 1416K [0x02f50000, 0x030d0000, 0x06a70000)
+   the space 1536K,  92% used [0x02f50000, 0x030b21a8, 0x03008800, 0x030d0000)
+ compacting perm gen  total 8192K, used 1590K [0x06a70000, 0x07270000, 0x0aa70000)
+   the space 8192K,  19% used [0x06a70000, 0x06bfd988, 0x06bfd600, 0x07270000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040c000 	C:\Program Files\Java\jre1.5.0_01\bin\javaw.exe
+0x7c910000 - 0x7c9c7000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c904000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e4c000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee1000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f36000 	C:\WINDOWS\system32\GDI32.dll
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\MSVCRT.dll
+0x6d640000 - 0x6d7c5000 	C:\Program Files\Java\jre1.5.0_01\bin\client\jvm.dll
+0x76ae0000 - 0x76b0f000 	C:\WINDOWS\system32\WINMM.dll
+0x6d280000 - 0x6d288000 	C:\Program Files\Java\jre1.5.0_01\bin\hpi.dll
+0x76ba0000 - 0x76bab000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d380000 - 0x6d3b5000 	C:\Program Files\Java\jre1.5.0_01\bin\jdwp.dll
+0x6d610000 - 0x6d61c000 	C:\Program Files\Java\jre1.5.0_01\bin\verify.dll
+0x6d300000 - 0x6d31d000 	C:\Program Files\Java\jre1.5.0_01\bin\java.dll
+0x6d630000 - 0x6d63f000 	C:\Program Files\Java\jre1.5.0_01\bin\zip.dll
+0x6d220000 - 0x6d227000 	C:\Program Files\Java\jre1.5.0_01\bin\dt_socket.dll
+0x719f0000 - 0x71a07000 	C:\WINDOWS\system32\WS2_32.dll
+0x719e0000 - 0x719e8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x71990000 - 0x719d0000 	C:\WINDOWS\System32\mswsock.dll
+0x76ed0000 - 0x76ef7000 	C:\WINDOWS\system32\DNSAPI.dll
+0x76f60000 - 0x76f68000 	C:\WINDOWS\System32\winrnr.dll
+0x76f10000 - 0x76f3d000 	C:\WINDOWS\system32\WLDAP32.dll
+0x76f70000 - 0x76f76000 	C:\WINDOWS\system32\rasadhlp.dll
+0x62e40000 - 0x62e99000 	C:\WINDOWS\system32\hnetcfg.dll
+0x719d0000 - 0x719d8000 	C:\WINDOWS\System32\wshtcpip.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,suspend=y,address=localhost:4286
+java_command: com.fhe.woshe.Demowoshe
+
+Environment Variables:
+CLASSPATH="i\QTJava.zip"
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\PROGRA~1\FICHIE~1\TVNAVI~1;C:\Program Files\cvsnt;
+USERNAME=Frédéric
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 10 Stepping 0, AuthenticAMD
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 1 family 6, cmov, cx8, fxsr, mmx, sse
+
+Memory: 4k page, physical 458224k(119060k free), swap 1082076k(654924k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_01-b08) for windows-x86, built on Dec  6 2004 19:51:00 by "java_re" with MS VC++ 6.0
+

@@ -1,0 +1,5 @@
+actu1;2;journaliste redacteur;1;2;
+actu1;2;journaliste reporter d image;1;2;
+presentation JT soir;8;presentateur jt soir;1;8;
+actu2;2;journaliste redacteur;1;4;actu1
+actu2;2;journaliste reporter d image;1;4;actu1
